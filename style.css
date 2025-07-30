@@ -486,7 +486,7 @@ header .navbar a:hover {
 
 
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   html {
     font-size: 55%;
   }
@@ -494,25 +494,32 @@ header .navbar a:hover {
   header {
     flex-direction: column;
     padding: 1rem 5%;
-    align-items: flex-start;
+    align-items: flex-end; /* ✅ Menu icon to the right */
   }
 
   #menu-bar {
     display: block;
+    font-size: 2.5rem;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;   /* ✅ Keep it right aligned */
+    top: 15px;
+    z-index: 1001;
   }
 
-.navbar {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  background: #ebedc6;
-  padding: 1rem 2rem;
-  right: 0;             /* ✅ Align to right */
-  left: auto;           /* ✅ Ensure not on left */
-  position: absolute;   /* ✅ Required for positioning */
-  top: 60px;
-  z-index: 999;
-}
+  .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ebedc6;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: auto; /* ✅ avoid pushing it to left */
+    z-index: 999;
+  }
 
   .navbar.active {
     display: flex;
