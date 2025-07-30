@@ -134,14 +134,16 @@ header .navbar a:hover {
 }
 
 #menu-bar {
-    font-size: 3rem;
-    cursor: pointer;
-    color: #666;
-    border: .1rem solid #666;
-    border-radius: .3rem;
-    padding: .5rem 1.5rem;
-    display: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 20px;       /* 👈 Move to right */
+  top: 15px;         /* 👈 Adjust top position as needed */
+  z-index: 1001;
 }
+
 
 .home {
     display: flex;
@@ -479,6 +481,138 @@ header .navbar a:hover {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
+
+
+
+
+@media (max-width: 768px) { 
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 1rem 5%;
+    align-items: flex-start;
+  }
+
+  #menu-bar {
+    display: block;
+  }
+
+.navbar {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: #ebedc6;
+  padding: 1rem 2rem;
+  right: 0;             /* ✅ Align to right */
+  left: auto;           /* ✅ Ensure not on left */
+  position: absolute;   /* ✅ Required for positioning */
+  top: 60px;
+  z-index: 999;
+}
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .home {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .home .content,
+  .home .image {
+    flex: 1 1 100%;
+  }
+
+  .popular .box-container,
+  .speciality .box-container,
+  .gallery .box-container,
+  .review .box-container,
+  .steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .order .row {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .order .row form {
+    width: 100%;
+  }
+
+  .order .row form .btn0 {
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .footer .credit {
+    font-size: 1.6rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .home .content h3 {
+    font-size: 3rem;
+  }
+
+  .home .content p {
+    font-size: 1.6rem;
+  }
+
+  .popular .box-container .box img {
+    height: auto;
+  }
+
+  .order .row form .inputBox {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer-content {
     flex: 1;
